@@ -1,0 +1,16 @@
+<div class="m-select-group" ref="group" >
+  <Form.Select.DropValue
+    on-click={this.click($event)}
+    className="{(className?' ' + className:'') + (this._selectedBody?'':' js-placeholder')}"
+  >
+    {#if this._selectedBody}
+      {#include this._selectedBody}
+    {#else}
+      {placeholder}
+    {/if}
+    <i class="icomoon icon-drop-down"></i>
+  </Form.Select.DropValue>
+  <Form.Select.DropOptions>
+    {#include this.$body}
+  </Form.Select.DropOptions>
+</div>

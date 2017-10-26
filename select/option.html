@@ -1,0 +1,4 @@
+<div
+  class="{(defaultClassName?defaultClassName:'') + (className?' ' + className:'') + (this.isSelected()?' selected':'') + (disabled ?' disabled':'')}"
+  on-mousedown="{this.pick()}"
+>{#include this.$body}{#if useIcon}<i class="selected-icon icomoon icon-right f-hidden"></i>{/if}</div>

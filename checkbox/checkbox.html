@@ -1,0 +1,9 @@
+<div
+  class="{(defaultClassName?defaultClassName:'') + (className?' ' + className:'')}"
+  on-click={this.switchCheckHandle()}
+>
+  <i
+    class="icomoon icon-checkbox {this.isChecked()?'checked':''} {this.isDisabled()?'disabled':''}"
+  ></i>
+  <span>{#include this.$body}</span>
+</div>

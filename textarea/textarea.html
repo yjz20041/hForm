@@ -1,0 +1,25 @@
+<div
+  class="m-textarea-group"
+  r-class={{"has-footer": !!this._hasFooter(), "focus": this._focus}}
+>
+  <textarea
+    ref="textarea"
+    class="{(defaultClassName?defaultClassName:'') + (className?' ' + className:'')}"
+    disabled="{disabled}"
+    type="{type}"
+    maxlength="{maxlength}"
+    placeholder="{placeholder}"
+    r-model="{this._value}"
+    on-blur="{this.blur($event)}"
+    on-focus="{this.focus($event)}"
+    on-input="{this.input($event)}"
+    on-change="{this.change($event)}"
+    on-propertychange="{$event.event.propertyName.toLowerCase() === 'value' && this.input($event)}"
+  ></textarea>
+  {#if this._hasFooter()}
+    <div class="m-textarea-footer">
+      还可以输入{this._getRemainingLength()}个字符
+    </div>
+  {/if}
+  {#include this.$body}
+</div>

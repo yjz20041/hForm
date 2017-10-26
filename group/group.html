@@ -1,0 +1,10 @@
+<div
+  class="{(defaultClassName?defaultClassName:'') + (className?' ' + className:'') + (errorMessage || error ? ' error' : '')}"
+>
+  {#include this.$body}
+  {#if errorMessage}
+  <div class="m-form-error">
+    <i class="icomoon icon-warn"></i><span class="m-error-message">{#include errorMessage}</span>
+  </div>
+  {/if}
+</div>

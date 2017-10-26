@@ -1,0 +1,28 @@
+<div class="m-input-group {this._focus?'focus':''} {!useClean?' no-in-icon':''}">
+  
+  <input
+    ref="input"
+    autocomplete="off"
+    r-hide="{_isPlaceholder}"
+    class="{(defaultClassName?defaultClassName:'') + (className?' ' + className:'')}"
+    disabled="{disabled}"
+    type="{type}"
+    maxlength="{maxlength}"
+    placeholder="{placeholder}"
+    r-model="{value}"
+    on-blur="{this.blur($event)}"
+    on-focus="{this.focus($event)}"
+    on-change="{this.change($event)}"
+    on-keyup="{this.input($event)}">
+  <input
+    ref="placeholder"
+    r-hide="{!_isPlaceholder}"
+    class="{(defaultClassName?defaultClassName:'') + (className?' ' + className:'') + ' js-placeholder'}"
+    disabled="{disabled}"
+    type="text"
+    value="{placeholder}"
+    placeholder="{placeholder}"
+    on-focus="{this.focusPlaceholder($event)}">
+  <div class="m-input-in-icon">{#include this._showCleanBtn()}</div>
+  {#include this.$body}
+</div>
