@@ -1,6 +1,9 @@
 <div class="m-input-group {this._focus?'focus':''} {!useClean?' no-in-icon':''}">
-  
+  {#if type === 'password'}
+    <input type="password" name={name} tabindex="9999" style="display: block; height: 0px; border: 1px solid transparent; margin-top: -2px;" autocomplete="off" />
+  {/if}
   <input
+    name={name}
     ref="input"
     autocomplete="off"
     r-hide="{_isPlaceholder}"
